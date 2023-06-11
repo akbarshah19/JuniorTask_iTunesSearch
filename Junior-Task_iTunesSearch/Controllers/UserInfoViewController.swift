@@ -1,13 +1,13 @@
 //
-//  RegisterViewController.swift
+//  UserInfoViewController.swift
 //  Junior-Task_iTunesSearch
 //
-//  Created by Akbarshah Jumanazarov on 6/10/23.
+//  Created by Akbarshah Jumanazarov on 6/11/23.
 //
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class UserInfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -14,6 +14,9 @@
 		AD0479412A348FDF00112C76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD04793F2A348FDF00112C76 /* LaunchScreen.storyboard */; };
 		AD0479492A34964700112C76 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0479482A34964700112C76 /* RegisterViewController.swift */; };
 		AD04794B2A3496AA00112C76 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD04794A2A3496AA00112C76 /* AlbumsViewController.swift */; };
+		ADD594CA2A3600A70005D4AB /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD594C92A3600A70005D4AB /* UserInfoViewController.swift */; };
+		ADD594CC2A3601710005D4AB /* DetailsAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD594CB2A3601710005D4AB /* DetailsAlbumViewController.swift */; };
+		ADD594D02A3606570005D4AB /* AlbumsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD594CF2A3606570005D4AB /* AlbumsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		AD0479422A348FDF00112C76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD0479482A34964700112C76 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		AD04794A2A3496AA00112C76 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
+		ADD594C92A3600A70005D4AB /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		ADD594CB2A3601710005D4AB /* DetailsAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsAlbumViewController.swift; sourceTree = "<group>"; };
+		ADD594CF2A3606570005D4AB /* AlbumsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +64,35 @@
 		AD0479332A348FDE00112C76 /* Junior-Task_iTunesSearch */ = {
 			isa = PBXGroup;
 			children = (
+				ADD594CE2A36062E0005D4AB /* Views */,
 				AD0479342A348FDE00112C76 /* AppDelegate.swift */,
 				AD0479362A348FDE00112C76 /* SceneDelegate.swift */,
-				AD0479382A348FDE00112C76 /* LoginViewController.swift */,
-				AD0479482A34964700112C76 /* RegisterViewController.swift */,
-				AD04794A2A3496AA00112C76 /* AlbumsViewController.swift */,
+				ADD594CD2A36061E0005D4AB /* Controllers */,
 				AD04793D2A348FDF00112C76 /* Assets.xcassets */,
 				AD04793F2A348FDF00112C76 /* LaunchScreen.storyboard */,
 				AD0479422A348FDF00112C76 /* Info.plist */,
 			);
 			path = "Junior-Task_iTunesSearch";
+			sourceTree = "<group>";
+		};
+		ADD594CD2A36061E0005D4AB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AD0479382A348FDE00112C76 /* LoginViewController.swift */,
+				AD0479482A34964700112C76 /* RegisterViewController.swift */,
+				AD04794A2A3496AA00112C76 /* AlbumsViewController.swift */,
+				ADD594C92A3600A70005D4AB /* UserInfoViewController.swift */,
+				ADD594CB2A3601710005D4AB /* DetailsAlbumViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		ADD594CE2A36062E0005D4AB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ADD594CF2A3606570005D4AB /* AlbumsTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +165,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADD594CC2A3601710005D4AB /* DetailsAlbumViewController.swift in Sources */,
 				AD0479392A348FDE00112C76 /* LoginViewController.swift in Sources */,
+				ADD594CA2A3600A70005D4AB /* UserInfoViewController.swift in Sources */,
+				ADD594D02A3606570005D4AB /* AlbumsTableViewCell.swift in Sources */,
 				AD0479352A348FDE00112C76 /* AppDelegate.swift in Sources */,
 				AD0479372A348FDE00112C76 /* SceneDelegate.swift in Sources */,
 				AD0479492A34964700112C76 /* RegisterViewController.swift in Sources */,
