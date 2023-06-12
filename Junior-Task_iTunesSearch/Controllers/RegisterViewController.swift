@@ -39,7 +39,7 @@ class RegisterViewController: UIViewController {
     private let firstNameValidLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Register"
+        label.text = "Required field"
         label.font = .systemFont(ofSize: 12)
         return label
     }()
@@ -140,6 +140,7 @@ class RegisterViewController: UIViewController {
     
     private func setup() {
         title = "Register"
+        view.backgroundColor = .systemBackground
         view.addSubview(scrollView)
         scrollView.addSubview(containerView)
         

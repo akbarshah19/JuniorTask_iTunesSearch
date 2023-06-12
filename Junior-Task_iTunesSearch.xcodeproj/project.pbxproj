@@ -14,6 +14,7 @@
 		AD0479412A348FDF00112C76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD04793F2A348FDF00112C76 /* LaunchScreen.storyboard */; };
 		AD0479492A34964700112C76 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0479482A34964700112C76 /* RegisterViewController.swift */; };
 		AD04794B2A3496AA00112C76 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD04794A2A3496AA00112C76 /* AlbumsViewController.swift */; };
+		AD91973D2A370CF4008A28D1 /* SongsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91973C2A370CF4008A28D1 /* SongsCollectionViewCell.swift */; };
 		ADD594CA2A3600A70005D4AB /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD594C92A3600A70005D4AB /* UserInfoViewController.swift */; };
 		ADD594CC2A3601710005D4AB /* DetailsAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD594CB2A3601710005D4AB /* DetailsAlbumViewController.swift */; };
 		ADD594D02A3606570005D4AB /* AlbumsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD594CF2A3606570005D4AB /* AlbumsTableViewCell.swift */; };
@@ -29,6 +30,7 @@
 		AD0479422A348FDF00112C76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD0479482A34964700112C76 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		AD04794A2A3496AA00112C76 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
+		AD91973C2A370CF4008A28D1 /* SongsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsCollectionViewCell.swift; sourceTree = "<group>"; };
 		ADD594C92A3600A70005D4AB /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		ADD594CB2A3601710005D4AB /* DetailsAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsAlbumViewController.swift; sourceTree = "<group>"; };
 		ADD594CF2A3606570005D4AB /* AlbumsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewCell.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				ADD594CF2A3606570005D4AB /* AlbumsTableViewCell.swift */,
+				AD91973C2A370CF4008A28D1 /* SongsCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				ADD594CA2A3600A70005D4AB /* UserInfoViewController.swift in Sources */,
 				ADD594D02A3606570005D4AB /* AlbumsTableViewCell.swift in Sources */,
 				AD0479352A348FDE00112C76 /* AppDelegate.swift in Sources */,
+				AD91973D2A370CF4008A28D1 /* SongsCollectionViewCell.swift in Sources */,
 				AD0479372A348FDE00112C76 /* SceneDelegate.swift in Sources */,
 				AD0479492A34964700112C76 /* RegisterViewController.swift in Sources */,
 				AD04794B2A3496AA00112C76 /* AlbumsViewController.swift in Sources */,
