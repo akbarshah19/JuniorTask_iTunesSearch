@@ -232,7 +232,25 @@ class RegisterViewController: UIViewController {
     }
     
     @objc private func didTapRegister() {
+        let fName = firstNameTextField.text ?? ""
+        let sName = secondNameTextField.text ?? ""
+        let phone = phoneNumberTextField.text ?? ""
+        let email = emailTextField.text ?? ""
+        let password = passwrodTextField.text ?? ""
         
+        if fName.isValid(validType: .name) &&
+            sName.isValid(validType: .name) &&
+            email.isValid(validType: .email) &&
+            password.isValid(validType: .password) &&
+            phone.count == 17 &&
+            ageIsValid() == true {
+            Database.shared.saveUser(firstName: fName, secondName: sName, phone: phone, email: email, password: password, age: datePicker.date)
+            registerLabel.text = "Complete!"
+        } else {
+            let alert = UIAlertController(title: "Error", message: "Please check all the fields for validity, age should be >17!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            present(alert, animated: true)
+        }
     }
     
     private func setTextField(textField: UITextField, label: UILabel, validType: String.ValidTypes, validMessage: String, wrongMessage: String, string: String, range: NSRange) {

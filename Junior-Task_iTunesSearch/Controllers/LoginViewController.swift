@@ -89,8 +89,38 @@ class LoginViewController: UIViewController {
     }
     
     @objc func didTapRegister() {
-        let vc = RegisterViewController()
-        present(vc, animated: true)
+        let email = emailTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        let user = findUser(email: email)
+        
+        if user == nil {
+            let alert = UIAlertController(title: "User not found!", message: "Please try again.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+            present(alert, animated: true)
+        } else if user?.password == password {
+            let nav = UINavigationController(rootViewController: RegisterViewController())
+            nav.modalPresentationStyle = .fullScreen
+            present(nav, animated: true)
+            
+            guard let activeUser = user else {return}
+            Database.shared.saveActiveUser(user: activeUser)
+        } else {
+            let alert = UIAlertController(title: "Incorrect password", message: "Please try again.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+            present(alert, animated: true)
+        }
+    }
+    
+    private func findUser(email: String) -> User? {
+        let dataBase = Database.shared.users
+        
+        for user in dataBase {
+            if user.email == email {
+                return user
+            }
+        }
+        
+        return nil
     }
     
     private func setup() {

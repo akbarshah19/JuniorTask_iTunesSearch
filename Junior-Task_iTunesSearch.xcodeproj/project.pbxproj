@@ -14,6 +14,8 @@
 		AD0479412A348FDF00112C76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD04793F2A348FDF00112C76 /* LaunchScreen.storyboard */; };
 		AD0479492A34964700112C76 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0479482A34964700112C76 /* RegisterViewController.swift */; };
 		AD04794B2A3496AA00112C76 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD04794A2A3496AA00112C76 /* AlbumsViewController.swift */; };
+		AD3AFCBF2A409AE8006959A5 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3AFCBE2A409AE8006959A5 /* UserDefaultsManager.swift */; };
+		AD3AFCC22A409BC9006959A5 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3AFCC12A409BC9006959A5 /* UserModel.swift */; };
 		AD3B96292A3765AB000294D6 /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3B96282A3765AB000294D6 /* String + Extension.swift */; };
 		AD91973D2A370CF4008A28D1 /* SongsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91973C2A370CF4008A28D1 /* SongsCollectionViewCell.swift */; };
 		ADD594CA2A3600A70005D4AB /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD594C92A3600A70005D4AB /* UserInfoViewController.swift */; };
@@ -31,6 +33,8 @@
 		AD0479422A348FDF00112C76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD0479482A34964700112C76 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		AD04794A2A3496AA00112C76 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
+		AD3AFCBE2A409AE8006959A5 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		AD3AFCC12A409BC9006959A5 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		AD3B96282A3765AB000294D6 /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
 		AD91973C2A370CF4008A28D1 /* SongsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsCollectionViewCell.swift; sourceTree = "<group>"; };
 		ADD594C92A3600A70005D4AB /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +72,8 @@
 		AD0479332A348FDE00112C76 /* Junior-Task_iTunesSearch */ = {
 			isa = PBXGroup;
 			children = (
+				AD3AFCC02A409BC0006959A5 /* Models */,
+				AD3AFCBD2A409AD3006959A5 /* Services */,
 				ADD594CE2A36062E0005D4AB /* Views */,
 				AD0479342A348FDE00112C76 /* AppDelegate.swift */,
 				AD0479362A348FDE00112C76 /* SceneDelegate.swift */,
@@ -78,6 +84,22 @@
 				AD3B96282A3765AB000294D6 /* String + Extension.swift */,
 			);
 			path = "Junior-Task_iTunesSearch";
+			sourceTree = "<group>";
+		};
+		AD3AFCBD2A409AD3006959A5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AD3AFCBE2A409AE8006959A5 /* UserDefaultsManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AD3AFCC02A409BC0006959A5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AD3AFCC12A409BC9006959A5 /* UserModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		ADD594CD2A36061E0005D4AB /* Controllers */ = {
@@ -175,11 +197,13 @@
 				AD0479392A348FDE00112C76 /* LoginViewController.swift in Sources */,
 				ADD594CA2A3600A70005D4AB /* UserInfoViewController.swift in Sources */,
 				ADD594D02A3606570005D4AB /* AlbumsTableViewCell.swift in Sources */,
+				AD3AFCBF2A409AE8006959A5 /* UserDefaultsManager.swift in Sources */,
 				AD0479352A348FDE00112C76 /* AppDelegate.swift in Sources */,
 				AD91973D2A370CF4008A28D1 /* SongsCollectionViewCell.swift in Sources */,
 				AD3B96292A3765AB000294D6 /* String + Extension.swift in Sources */,
 				AD0479372A348FDE00112C76 /* SceneDelegate.swift in Sources */,
 				AD0479492A34964700112C76 /* RegisterViewController.swift in Sources */,
+				AD3AFCC22A409BC9006959A5 /* UserModel.swift in Sources */,
 				AD04794B2A3496AA00112C76 /* AlbumsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
