@@ -58,6 +58,7 @@ class DetailsAlbumViewController: UIViewController {
     }()
     
     private var stackView = UIStackView()
+    var album: Album?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +66,7 @@ class DetailsAlbumViewController: UIViewController {
         setup()
         setConstraints()
         setDelegates()
+        setModel()
     }
     
     private func setup() {
@@ -108,6 +110,45 @@ class DetailsAlbumViewController: UIViewController {
     private func setDelegates() {
         collectionView.delegate = self
         collectionView.dataSource = self
+    }
+    
+    private func setModel() {
+        guard let album = album else {return}
+        
+        albumNameLabel.text = album.collectionName
+        artistNameLabel.text = album.artistName
+        trackCountLabel.text = "\(album.trackCount) tracks"
+        releaseDateLabel.text = setDateFormat(date: album.releaseDate)
+        
+        guard let url = album.artworkUrl100 else {return}
+        setImage(urlString: url)
+    }
+    
+    private func setDateFormat(date: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ssZZZ"
+        guard let backendDate = formatter.date(from: date) else {return ""}
+        let formatDate = DateFormatter()
+        formatDate.dateFormat = "dd-MM-yyyy"
+        let date = formatDate.string(from: backendDate)
+        return date
+    }
+    
+    private func setImage(urlString: String?) {
+        if let url = urlString {
+            NetworkRequest.shared.requestData(urlString: url) { [weak self] result in
+                switch result {
+                case .success(let data):
+                    let image = UIImage(data: data)
+                    self?.albumLogo.image = image
+                case .failure(let error):
+                    print("No album logo" + error.localizedDescription)
+                    self?.albumLogo.image = nil
+                }
+            }
+        } else {
+            albumLogo.image = nil
+        }
     }
 }
 

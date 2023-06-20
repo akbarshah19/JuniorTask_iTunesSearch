@@ -38,6 +38,7 @@ class AlbumsTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 16, weight: .regular)
         label.text = "10 tracks"
+        label.textAlignment = .right
         return label
     }()
     
@@ -56,6 +57,27 @@ class AlbumsTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(with model: Album) {
+        if let urlString = model.artworkUrl100 {
+            NetworkRequest.shared.requestData(urlString: urlString) { [weak self] result in
+                switch result {
+                case .success(let data):
+                    let image = UIImage(data: data)
+                    self?.albumLogo.image = image
+                case .failure(let error):
+                    print("No album logo" + error.localizedDescription)
+                    self?.albumLogo.image = nil
+                }
+            }
+        } else {
+            albumLogo.image = nil
+        }
+        
+        albumNameLabel.text = model.collectionName
+        artistNameLabel.text = model.artistName
+        trackCountLabel.text = "\(model.trackCount) tracks"
     }
     
     private func setup() {

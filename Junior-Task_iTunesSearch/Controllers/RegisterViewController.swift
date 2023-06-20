@@ -120,7 +120,7 @@ class RegisterViewController: UIViewController {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Register", for: .normal)
-        button.backgroundColor = .green
+        button.backgroundColor = .systemIndigo
         button.tintColor = .white
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 8

@@ -14,6 +14,9 @@
 		AD0479412A348FDF00112C76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD04793F2A348FDF00112C76 /* LaunchScreen.storyboard */; };
 		AD0479492A34964700112C76 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0479482A34964700112C76 /* RegisterViewController.swift */; };
 		AD04794B2A3496AA00112C76 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD04794A2A3496AA00112C76 /* AlbumsViewController.swift */; };
+		AD0D19B02A4168380037BE59 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0D19AF2A4168380037BE59 /* AlbumModel.swift */; };
+		AD0D19B42A41696F0037BE59 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0D19B32A41696F0037BE59 /* NetworkRequest.swift */; };
+		AD0D19B62A417A680037BE59 /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0D19B52A417A680037BE59 /* NetworkDataFetch.swift */; };
 		AD3AFCBF2A409AE8006959A5 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3AFCBE2A409AE8006959A5 /* UserDefaultsManager.swift */; };
 		AD3AFCC22A409BC9006959A5 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3AFCC12A409BC9006959A5 /* UserModel.swift */; };
 		AD3B96292A3765AB000294D6 /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3B96282A3765AB000294D6 /* String + Extension.swift */; };
@@ -33,6 +36,9 @@
 		AD0479422A348FDF00112C76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD0479482A34964700112C76 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		AD04794A2A3496AA00112C76 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
+		AD0D19AF2A4168380037BE59 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
+		AD0D19B32A41696F0037BE59 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		AD0D19B52A417A680037BE59 /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
 		AD3AFCBE2A409AE8006959A5 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		AD3AFCC12A409BC9006959A5 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		AD3B96282A3765AB000294D6 /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
@@ -72,11 +78,10 @@
 		AD0479332A348FDE00112C76 /* Junior-Task_iTunesSearch */ = {
 			isa = PBXGroup;
 			children = (
+				AD0D19B12A4169370037BE59 /* Applications */,
 				AD3AFCC02A409BC0006959A5 /* Models */,
 				AD3AFCBD2A409AD3006959A5 /* Services */,
 				ADD594CE2A36062E0005D4AB /* Views */,
-				AD0479342A348FDE00112C76 /* AppDelegate.swift */,
-				AD0479362A348FDE00112C76 /* SceneDelegate.swift */,
 				ADD594CD2A36061E0005D4AB /* Controllers */,
 				AD04793D2A348FDF00112C76 /* Assets.xcassets */,
 				AD04793F2A348FDF00112C76 /* LaunchScreen.storyboard */,
@@ -84,6 +89,25 @@
 				AD3B96282A3765AB000294D6 /* String + Extension.swift */,
 			);
 			path = "Junior-Task_iTunesSearch";
+			sourceTree = "<group>";
+		};
+		AD0D19B12A4169370037BE59 /* Applications */ = {
+			isa = PBXGroup;
+			children = (
+				AD0D19B22A4169520037BE59 /* Network */,
+				AD0479362A348FDE00112C76 /* SceneDelegate.swift */,
+				AD0479342A348FDE00112C76 /* AppDelegate.swift */,
+			);
+			path = Applications;
+			sourceTree = "<group>";
+		};
+		AD0D19B22A4169520037BE59 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AD0D19B32A41696F0037BE59 /* NetworkRequest.swift */,
+				AD0D19B52A417A680037BE59 /* NetworkDataFetch.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		AD3AFCBD2A409AD3006959A5 /* Services */ = {
@@ -98,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				AD3AFCC12A409BC9006959A5 /* UserModel.swift */,
+				AD0D19AF2A4168380037BE59 /* AlbumModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -193,12 +218,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD0D19B42A41696F0037BE59 /* NetworkRequest.swift in Sources */,
 				ADD594CC2A3601710005D4AB /* DetailsAlbumViewController.swift in Sources */,
 				AD0479392A348FDE00112C76 /* LoginViewController.swift in Sources */,
 				ADD594CA2A3600A70005D4AB /* UserInfoViewController.swift in Sources */,
+				AD0D19B62A417A680037BE59 /* NetworkDataFetch.swift in Sources */,
 				ADD594D02A3606570005D4AB /* AlbumsTableViewCell.swift in Sources */,
 				AD3AFCBF2A409AE8006959A5 /* UserDefaultsManager.swift in Sources */,
 				AD0479352A348FDE00112C76 /* AppDelegate.swift in Sources */,
+				AD0D19B02A4168380037BE59 /* AlbumModel.swift in Sources */,
 				AD91973D2A370CF4008A28D1 /* SongsCollectionViewCell.swift in Sources */,
 				AD3B96292A3765AB000294D6 /* String + Extension.swift in Sources */,
 				AD0479372A348FDE00112C76 /* SceneDelegate.swift in Sources */,
