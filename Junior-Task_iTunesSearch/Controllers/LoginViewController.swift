@@ -83,31 +83,26 @@ class LoginViewController: UIViewController {
     }
     
     @objc func didTapLogin() {
-        let navVC = UINavigationController(rootViewController: AlbumsViewController())
-        navVC.modalPresentationStyle = .fullScreen
+        let email = emailTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        let user = findUser(email: email)
         
-//        let email = emailTextField.text ?? ""
-//        let password = passwordTextField.text ?? ""
-//        let user = findUser(email: email)
-//        
-//        if user == nil {
-//            let alert = UIAlertController(title: "User not found!", message: "Please try again.", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "OK", style: .cancel))
-//            present(alert, animated: true)
-//        } else if user?.password == password {
-//            let nav = UINavigationController(rootViewController: RegisterViewController())
-//            nav.modalPresentationStyle = .fullScreen
-//            present(nav, animated: true)
-//            
-//            guard let activeUser = user else {return}
-//            Database.shared.saveActiveUser(user: activeUser)
-//        } else {
-//            let alert = UIAlertController(title: "Incorrect password", message: "Please try again.", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "OK", style: .cancel))
-//            present(alert, animated: true)
-//        }
-        
-        present(navVC, animated: true)
+        if user == nil {
+            let alert = UIAlertController(title: "User not found!", message: "Please try again.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+            present(alert, animated: true)
+        } else if user?.password == password {
+            let nav = UINavigationController(rootViewController: AlbumsViewController())
+            nav.modalPresentationStyle = .fullScreen
+            present(nav, animated: true)
+            
+            guard let activeUser = user else {return}
+            Database.shared.saveActiveUser(user: activeUser)
+        } else {
+            let alert = UIAlertController(title: "Incorrect password", message: "Please try again.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+            present(alert, animated: true)
+        }
     }
     
     @objc func didTapRegister() {

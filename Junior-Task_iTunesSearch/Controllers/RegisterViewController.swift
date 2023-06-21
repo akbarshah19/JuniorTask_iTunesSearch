@@ -89,6 +89,7 @@ class RegisterViewController: UIViewController {
         field.translatesAutoresizingMaskIntoConstraints = false
         field.placeholder = "Email address"
         field.borderStyle = .roundedRect
+        field.autocapitalizationType = .none
         return field
     }()
     
@@ -242,12 +243,12 @@ class RegisterViewController: UIViewController {
             sName.isValid(validType: .name) &&
             email.isValid(validType: .email) &&
             password.isValid(validType: .password) &&
-            phone.count == 17 &&
+            phone.count == 19 &&
             ageIsValid() == true {
             Database.shared.saveUser(firstName: fName, secondName: sName, phone: phone, email: email, password: password, age: datePicker.date)
             registerLabel.text = "Complete!"
         } else {
-            let alert = UIAlertController(title: "Error", message: "Please check all the fields for validity, age should be >17!", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Error", message: "Please check all the fields for validity, age should be more than 18!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
             present(alert, animated: true)
         }
@@ -295,7 +296,7 @@ class RegisterViewController: UIViewController {
             }
         }
         
-        if result.count == 17 {
+        if result.count == 19 {
             phonNumberValidLabel.text = "Phone is valid"
             phonNumberValidLabel.textColor = .green
         } else {
@@ -318,7 +319,7 @@ class RegisterViewController: UIViewController {
             return false
         }
         
-        return (ageUser < 18 ? false : true)
+        return (ageUser > 18 ? true : false)
     }
 }
 
@@ -356,7 +357,7 @@ extension RegisterViewController: UITextFieldDelegate {
                          label: passwordValidLabel,
                          validType: passwordValidType,
                          validMessage: "Password is valid",
-                         wrongMessage: "Password is not valid",
+                         wrongMessage: "Usa at least one uppercase, one lowercase and number, total chars must be more than 6",
                          string: string,
                          range: range)
         case phoneNumberTextField: phoneNumberTextField.text = setPhoneNumberMask(textField: phoneNumberTextField,

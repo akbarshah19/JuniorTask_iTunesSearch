@@ -59,6 +59,7 @@ class DetailsAlbumViewController: UIViewController {
     
     private var stackView = UIStackView()
     var album: Album?
+    var songs = [Song]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +68,7 @@ class DetailsAlbumViewController: UIViewController {
         setConstraints()
         setDelegates()
         setModel()
+        fetchSong(album: album)
     }
     
     private func setup() {
@@ -150,16 +152,34 @@ class DetailsAlbumViewController: UIViewController {
             albumLogo.image = nil
         }
     }
+    
+    private func fetchSong(album: Album?) {
+        guard let album = album else {return}
+        let idAlbum = album.collectionId
+        let urlString = "https://itunes.apple.com/lookup?id=\(idAlbum)&entity=song"
+        NetworkDataFetch.shared.fetchSong(urlString: urlString) { [weak self] songModel, error in
+            if error == nil {
+                guard let songModel = songModel else {return}
+                self?.songs = songModel.results
+                self?.collectionView.reloadData()
+            } else {
+                let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+                self?.present(alert, animated: true)
+            }
+        }
+    }
 }
 
 extension DetailsAlbumViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return songs.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SongsCollectionViewCell
-        cell.nameSongLabel.text = "Name song"
+        let song = songs[indexPath.row].trackName
+        cell.nameSongLabel.text = song
         return cell
     }
     
